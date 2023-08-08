@@ -4,1060 +4,6 @@ module PactFfi
   extend FFI::Library
   ffi_lib "libpact_ffi"
 
-  typedef :__builtin_va_list, :va_list
-
-  typedef :__builtin_va_list, :__gnuc_va_list
-
-  typedef :uchar, :__u_char
-
-  typedef :unsigned-short, :__u_short
-
-  typedef :uint, :__u_int
-
-  typedef :ulong, :__u_long
-
-  typedef :signed-char, :__int8_t
-
-  typedef :uchar, :__uint8_t
-
-  typedef :short, :__int16_t
-
-  typedef :unsigned-short, :__uint16_t
-
-  typedef :int, :__int32_t
-
-  typedef :uint, :__uint32_t
-
-  typedef :long, :__int64_t
-
-  typedef :ulong, :__uint64_t
-
-  typedef :__int8_t, :__int_least8_t
-
-  typedef :__uint8_t, :__uint_least8_t
-
-  typedef :__int16_t, :__int_least16_t
-
-  typedef :__uint16_t, :__uint_least16_t
-
-  typedef :__int32_t, :__int_least32_t
-
-  typedef :__uint32_t, :__uint_least32_t
-
-  typedef :__int64_t, :__int_least64_t
-
-  typedef :__uint64_t, :__uint_least64_t
-
-  typedef :long, :__quad_t
-
-  typedef :ulong, :__u_quad_t
-
-  typedef :long, :__intmax_t
-
-  typedef :ulong, :__uintmax_t
-
-  typedef :ulong, :__dev_t
-
-  typedef :uint, :__uid_t
-
-  typedef :uint, :__gid_t
-
-  typedef :ulong, :__ino_t
-
-  typedef :ulong, :__ino64_t
-
-  typedef :uint, :__mode_t
-
-  typedef :ulong, :__nlink_t
-
-  typedef :long, :__off_t
-
-  typedef :long, :__off64_t
-
-  typedef :int, :__pid_t
-
-  class Anon_Type_0 < FFI::Union
-    layout \
-      :__val, [:int, 2]
-  end
-
-  C__Fsid_T = Anon_Type_0
-
-  typedef :long, :__clock_t
-
-  typedef :ulong, :__rlim_t
-
-  typedef :ulong, :__rlim64_t
-
-  typedef :uint, :__id_t
-
-  typedef :long, :__time_t
-
-  typedef :uint, :__useconds_t
-
-  typedef :long, :__suseconds_t
-
-  typedef :long, :__suseconds64_t
-
-  typedef :int, :__daddr_t
-
-  typedef :int, :__key_t
-
-  typedef :int, :__clockid_t
-
-  typedef :pointer, :__timer_t
-
-  typedef :long, :__blksize_t
-
-  typedef :long, :__blkcnt_t
-
-  typedef :long, :__blkcnt64_t
-
-  typedef :ulong, :__fsblkcnt_t
-
-  typedef :ulong, :__fsblkcnt64_t
-
-  typedef :ulong, :__fsfilcnt_t
-
-  typedef :ulong, :__fsfilcnt64_t
-
-  typedef :long, :__fsword_t
-
-  typedef :long, :__ssize_t
-
-  typedef :long, :__syscall_slong_t
-
-  typedef :ulong, :__syscall_ulong_t
-
-  typedef :__off64_t, :__loff_t
-
-  typedef :string, :__caddr_t
-
-  typedef :long, :__intptr_t
-
-  typedef :uint, :__socklen_t
-
-  typedef :int, :__sig_atomic_t
-
-  typedef :__int8_t, :int8_t
-
-  typedef :__int16_t, :int16_t
-
-  typedef :__int32_t, :int32_t
-
-  typedef :__int64_t, :int64_t
-
-  typedef :__uint8_t, :uint8_t
-
-  typedef :__uint16_t, :uint16_t
-
-  typedef :__uint32_t, :uint32_t
-
-  typedef :__uint64_t, :uint64_t
-
-  typedef :__int_least8_t, :int_least8_t
-
-  typedef :__int_least16_t, :int_least16_t
-
-  typedef :__int_least32_t, :int_least32_t
-
-  typedef :__int_least64_t, :int_least64_t
-
-  typedef :__uint_least8_t, :uint_least8_t
-
-  typedef :__uint_least16_t, :uint_least16_t
-
-  typedef :__uint_least32_t, :uint_least32_t
-
-  typedef :__uint_least64_t, :uint_least64_t
-
-  typedef :signed-char, :int_fast8_t
-
-  typedef :long, :int_fast16_t
-
-  typedef :long, :int_fast32_t
-
-  typedef :long, :int_fast64_t
-
-  typedef :uchar, :uint_fast8_t
-
-  typedef :ulong, :uint_fast16_t
-
-  typedef :ulong, :uint_fast32_t
-
-  typedef :ulong, :uint_fast64_t
-
-  typedef :long, :intptr_t
-
-  typedef :ulong, :uintptr_t
-
-  typedef :__intmax_t, :intmax_t
-
-  typedef :__uintmax_t, :uintmax_t
-
-  typedef :ulong, :size_t
-
-  typedef :int, :wchar_t
-
-  typedef :float, :_Float32
-
-  typedef :double, :_Float64
-
-  typedef :double, :_Float32x
-
-  typedef :long-double, :_Float64x
-
-  class Anon_Type_1 < FFI::Union
-    layout \
-      :quot, :int,
-      :rem, :int
-  end
-
-  Div_T = Anon_Type_1
-
-  class Anon_Type_2 < FFI::Union
-    layout \
-      :quot, :long,
-      :rem, :long
-  end
-
-  Ldiv_T = Anon_Type_2
-
-  class Anon_Type_3 < FFI::Union
-    layout \
-      :quot, :long-long,
-      :rem, :long-long
-  end
-
-  Lldiv_T = Anon_Type_3
-
-  attach_function '__ctype_get_mb_cur_max', [
-  ], :size_t
-
-  attach_function 'atof', [
-    :string,
-  ], :double
-
-  attach_function 'atoi', [
-    :string,
-  ], :int
-
-  attach_function 'atol', [
-    :string,
-  ], :long
-
-  attach_function 'atoll', [
-    :string,
-  ], :long-long
-
-  attach_function 'strtod', [
-    :string,
-    :pointer,
-  ], :double
-
-  attach_function 'strtof', [
-    :string,
-    :pointer,
-  ], :float
-
-  attach_function 'strtold', [
-    :string,
-    :pointer,
-  ], :long-double
-
-  attach_function 'strtol', [
-    :string,
-    :pointer,
-    :int,
-  ], :long
-
-  attach_function 'strtoul', [
-    :string,
-    :pointer,
-    :int,
-  ], :ulong
-
-  attach_function 'strtoq', [
-    :string,
-    :pointer,
-    :int,
-  ], :long-long
-
-  attach_function 'strtouq', [
-    :string,
-    :pointer,
-    :int,
-  ], :unsigned-long-long
-
-  attach_function 'strtoll', [
-    :string,
-    :pointer,
-    :int,
-  ], :long-long
-
-  attach_function 'strtoull', [
-    :string,
-    :pointer,
-    :int,
-  ], :unsigned-long-long
-
-  attach_function 'l64a', [
-    :long,
-  ], :string
-
-  attach_function 'a64l', [
-    :string,
-  ], :long
-
-  typedef :__u_char, :u_char
-
-  typedef :__u_short, :u_short
-
-  typedef :__u_int, :u_int
-
-  typedef :__u_long, :u_long
-
-  typedef :__quad_t, :quad_t
-
-  typedef :__u_quad_t, :u_quad_t
-
-  typedef :__fsid_t, :fsid_t
-
-  typedef :__loff_t, :loff_t
-
-  typedef :__ino_t, :ino_t
-
-  typedef :__dev_t, :dev_t
-
-  typedef :__gid_t, :gid_t
-
-  typedef :__mode_t, :mode_t
-
-  typedef :__nlink_t, :nlink_t
-
-  typedef :__uid_t, :uid_t
-
-  typedef :__off_t, :off_t
-
-  typedef :__pid_t, :pid_t
-
-  typedef :__id_t, :id_t
-
-  typedef :__ssize_t, :ssize_t
-
-  typedef :__daddr_t, :daddr_t
-
-  typedef :__caddr_t, :caddr_t
-
-  typedef :__key_t, :key_t
-
-  typedef :__clock_t, :clock_t
-
-  typedef :__clockid_t, :clockid_t
-
-  typedef :__time_t, :time_t
-
-  typedef :__timer_t, :timer_t
-
-  typedef :ulong, :ulong
-
-  typedef :unsigned-short, :ushort
-
-  typedef :uint, :uint
-
-  typedef :__uint8_t, :u_int8_t
-
-  typedef :__uint16_t, :u_int16_t
-
-  typedef :__uint32_t, :u_int32_t
-
-  typedef :__uint64_t, :u_int64_t
-
-  typedef :int, :register_t
-
-  attach_function '__bswap_16', [
-    :__uint16_t,
-  ], :__uint16_t
-
-  attach_function '__bswap_32', [
-    :__uint32_t,
-  ], :__uint32_t
-
-  attach_function '__bswap_64', [
-    :__uint64_t,
-  ], :__uint64_t
-
-  attach_function '__uint16_identity', [
-    :__uint16_t,
-  ], :__uint16_t
-
-  attach_function '__uint32_identity', [
-    :__uint32_t,
-  ], :__uint32_t
-
-  attach_function '__uint64_identity', [
-    :__uint64_t,
-  ], :__uint64_t
-
-  class Anon_Type_4 < FFI::Union
-    layout \
-      :__val, [:ulong, 16]
-  end
-
-  C__Sigset_T = Anon_Type_4
-
-  typedef :__sigset_t, :sigset_t
-
-  class  < FFI::Union
-    layout \
-      :tv_sec, :__time_t,
-      :tv_usec, :__suseconds_t
-  end
-
-  class  < FFI::Union
-    layout \
-      :tv_sec, :__time_t,
-      :tv_nsec, :__syscall_slong_t
-  end
-
-  typedef :__suseconds_t, :suseconds_t
-
-  typedef :long, :__fd_mask
-
-  class Anon_Type_5 < FFI::Union
-    layout \
-      :__fds_bits, [:__fd_mask, 16]
-  end
-
-  Fd_Set = Anon_Type_5
-
-  typedef :__fd_mask, :fd_mask
-
-  attach_function 'select', [
-    :int,
-    :pointer,
-    :pointer,
-    :pointer,
-    :pointer.ptr,
-  ], :int
-
-  attach_function 'pselect', [
-    :int,
-    :pointer,
-    :pointer,
-    :pointer,
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  typedef :__blksize_t, :blksize_t
-
-  typedef :__blkcnt_t, :blkcnt_t
-
-  typedef :__fsblkcnt_t, :fsblkcnt_t
-
-  typedef :__fsfilcnt_t, :fsfilcnt_t
-
-  class Anon_Type_7 < FFI::Union
-    layout \
-      :__low, :uint,
-      :__high, :uint
-  end
-
-  class Anon_Type_6 < FFI::Union
-    layout \
-      :__value64, :unsigned-long-long,
-      :__value32, Anon_Type_7
-  end
-
-  C__Atomic_Wide_Counter = Anon_Type_6
-
-  class C__Pthread_Internal_List < FFI::Union
-    layout \
-      :__prev, :pointer.ptr,
-      :__next, :pointer.ptr
-  end
-
-  C__Pthread_List_T = C__Pthread_Internal_List
-
-  class C__Pthread_Internal_Slist < FFI::Union
-    layout \
-      :__next, :pointer.ptr
-  end
-
-  C__Pthread_Slist_T = C__Pthread_Internal_Slist
-
-  class C__Pthread_Mutex_S < FFI::Union
-    layout \
-      :__lock, :int,
-      :__count, :uint,
-      :__owner, :int,
-      :__nusers, :uint,
-      :__kind, :int,
-      :__spins, :short,
-      :__elision, :short,
-      :__list, :__pthread_list_t
-  end
-
-  class C__Pthread_Rwlock_Arch_T < FFI::Union
-    layout \
-      :__readers, :uint,
-      :__writers, :uint,
-      :__wrphase_futex, :uint,
-      :__writers_futex, :uint,
-      :__pad3, :uint,
-      :__pad4, :uint,
-      :__cur_writer, :int,
-      :__shared, :int,
-      :__rwelision, :signed-char,
-      :__pad1, [:uchar, 7],
-      :__pad2, :ulong,
-      :__flags, :uint
-  end
-
-  class C__Pthread_Cond_S < FFI::Union
-    layout \
-      :__wseq, :__atomic_wide_counter,
-      :__g1_start, :__atomic_wide_counter,
-      :__g_refs, [:uint, 2],
-      :__g_size, [:uint, 2],
-      :__g1_orig_size, :uint,
-      :__wrefs, :uint,
-      :__g_signals, [:uint, 2]
-  end
-
-  typedef :uint, :__tss_t
-
-  typedef :ulong, :__thrd_t
-
-  class Anon_Type_8 < FFI::Union
-    layout \
-      :__data, :int
-  end
-
-  C__Once_Flag = Anon_Type_8
-
-  typedef :ulong, :pthread_t
-
-  class Anon_Type_9 < FFI::Union
-    layout \
-      :__size, [:char, 4],
-      :__align, :int
-  end
-
-  Pthread_Mutexattr_T = Anon_Type_9
-
-  class Anon_Type_10 < FFI::Union
-    layout \
-      :__size, [:char, 4],
-      :__align, :int
-  end
-
-  Pthread_Condattr_T = Anon_Type_10
-
-  typedef :uint, :pthread_key_t
-
-  typedef :int, :pthread_once_t
-
-  class Pthread_Attr_T < FFI::Union
-    layout \
-      :__size, [:char, 56],
-      :__align, :long
-  end
-
-  Pthread_Attr_T = Pthread_Attr_T
-
-  class Anon_Type_11 < FFI::Union
-    layout \
-      :__data, C__Pthread_Mutex_S,
-      :__size, [:char, 40],
-      :__align, :long
-  end
-
-  Pthread_Mutex_T = Anon_Type_11
-
-  class Anon_Type_12 < FFI::Union
-    layout \
-      :__data, C__Pthread_Cond_S,
-      :__size, [:char, 48],
-      :__align, :long-long
-  end
-
-  Pthread_Cond_T = Anon_Type_12
-
-  class Anon_Type_13 < FFI::Union
-    layout \
-      :__data, C__Pthread_Rwlock_Arch_T,
-      :__size, [:char, 56],
-      :__align, :long
-  end
-
-  Pthread_Rwlock_T = Anon_Type_13
-
-  class Anon_Type_14 < FFI::Union
-    layout \
-      :__size, [:char, 8],
-      :__align, :long
-  end
-
-  Pthread_Rwlockattr_T = Anon_Type_14
-
-  typedef :int, :pthread_spinlock_t
-
-  class Anon_Type_15 < FFI::Union
-    layout \
-      :__size, [:char, 32],
-      :__align, :long
-  end
-
-  Pthread_Barrier_T = Anon_Type_15
-
-  class Anon_Type_16 < FFI::Union
-    layout \
-      :__size, [:char, 4],
-      :__align, :int
-  end
-
-  Pthread_Barrierattr_T = Anon_Type_16
-
-  attach_function 'random', [
-  ], :long
-
-  attach_function 'srandom', [
-    :uint,
-  ], :void
-
-  attach_function 'initstate', [
-    :uint,
-    :string,
-    :size_t,
-  ], :string
-
-  attach_function 'setstate', [
-    :string,
-  ], :string
-
-  class Random_Data < FFI::Union
-    layout \
-      :fptr, :pointer,
-      :rptr, :pointer,
-      :state, :pointer,
-      :rand_type, :int,
-      :rand_deg, :int,
-      :rand_sep, :int,
-      :end_ptr, :pointer
-  end
-
-  attach_function 'random_r', [
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  attach_function 'srandom_r', [
-    :uint,
-    :pointer.ptr,
-  ], :int
-
-  attach_function 'initstate_r', [
-    :uint,
-    :string,
-    :size_t,
-    :pointer.ptr,
-  ], :int
-
-  attach_function 'setstate_r', [
-    :string,
-    :pointer.ptr,
-  ], :int
-
-  attach_function 'rand', [
-  ], :int
-
-  attach_function 'srand', [
-    :uint,
-  ], :void
-
-  attach_function 'rand_r', [
-    :pointer,
-  ], :int
-
-  attach_function 'drand48', [
-  ], :double
-
-  attach_function 'erand48', [
-    [:unsigned-short, 3],
-  ], :double
-
-  attach_function 'lrand48', [
-  ], :long
-
-  attach_function 'nrand48', [
-    [:unsigned-short, 3],
-  ], :long
-
-  attach_function 'mrand48', [
-  ], :long
-
-  attach_function 'jrand48', [
-    [:unsigned-short, 3],
-  ], :long
-
-  attach_function 'srand48', [
-    :long,
-  ], :void
-
-  attach_function 'seed48', [
-    [:unsigned-short, 3],
-  ], :pointer
-
-  attach_function 'lcong48', [
-    [:unsigned-short, 7],
-  ], :void
-
-  class Drand48_Data < FFI::Union
-    layout \
-      :__x, [:unsigned-short, 3],
-      :__old_x, [:unsigned-short, 3],
-      :__c, :unsigned-short,
-      :__init, :unsigned-short,
-      :__a, :unsigned-long-long
-  end
-
-  attach_function 'drand48_r', [
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  attach_function 'erand48_r', [
-    [:unsigned-short, 3],
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  attach_function 'lrand48_r', [
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  attach_function 'nrand48_r', [
-    [:unsigned-short, 3],
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  attach_function 'mrand48_r', [
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  attach_function 'jrand48_r', [
-    [:unsigned-short, 3],
-    :pointer.ptr,
-    :pointer,
-  ], :int
-
-  attach_function 'srand48_r', [
-    :long,
-    :pointer.ptr,
-  ], :int
-
-  attach_function 'seed48_r', [
-    [:unsigned-short, 3],
-    :pointer.ptr,
-  ], :int
-
-  attach_function 'lcong48_r', [
-    [:unsigned-short, 7],
-    :pointer.ptr,
-  ], :int
-
-  attach_function 'malloc', [
-    :size_t,
-  ], :pointer
-
-  attach_function 'calloc', [
-    :size_t,
-    :size_t,
-  ], :pointer
-
-  attach_function 'realloc', [
-    :pointer,
-    :size_t,
-  ], :pointer
-
-  attach_function 'free', [
-    :pointer,
-  ], :void
-
-  attach_function 'reallocarray', [
-    :pointer,
-    :size_t,
-    :size_t,
-  ], :pointer
-
-  attach_function 'reallocarray', [
-    :pointer,
-    :size_t,
-    :size_t,
-  ], :pointer
-
-  attach_function 'alloca', [
-    :size_t,
-  ], :pointer
-
-  attach_function 'valloc', [
-    :size_t,
-  ], :pointer
-
-  attach_function 'posix_memalign', [
-    :pointer,
-    :size_t,
-    :size_t,
-  ], :int
-
-  attach_function 'aligned_alloc', [
-    :size_t,
-    :size_t,
-  ], :pointer
-
-  attach_function 'abort', [
-  ], :void
-
-  attach_function 'atexit', [
-    :pointer,
-  ], :int
-
-  attach_function 'at_quick_exit', [
-    :pointer,
-  ], :int
-
-  attach_function 'on_exit', [
-    :pointer,
-    :pointer,
-  ], :int
-
-  attach_function 'exit', [
-    :int,
-  ], :void
-
-  attach_function 'quick_exit', [
-    :int,
-  ], :void
-
-  attach_function '_Exit', [
-    :int,
-  ], :void
-
-  attach_function 'getenv', [
-    :string,
-  ], :string
-
-  attach_function 'putenv', [
-    :string,
-  ], :int
-
-  attach_function 'setenv', [
-    :string,
-    :string,
-    :int,
-  ], :int
-
-  attach_function 'unsetenv', [
-    :string,
-  ], :int
-
-  attach_function 'clearenv', [
-  ], :int
-
-  attach_function 'mktemp', [
-    :string,
-  ], :string
-
-  attach_function 'mkstemp', [
-    :string,
-  ], :int
-
-  attach_function 'mkstemps', [
-    :string,
-    :int,
-  ], :int
-
-  attach_function 'mkdtemp', [
-    :string,
-  ], :string
-
-  attach_function 'system', [
-    :string,
-  ], :int
-
-  attach_function 'realpath', [
-    :string,
-    :string,
-  ], :string
-
-  typedef :pointer, :__compar_fn_t
-
-  attach_function 'bsearch', [
-    :pointer,
-    :pointer,
-    :size_t,
-    :size_t,
-    :__compar_fn_t,
-  ], :pointer
-
-  attach_function 'qsort', [
-    :pointer,
-    :size_t,
-    :size_t,
-    :__compar_fn_t,
-  ], :void
-
-  attach_function 'abs', [
-    :int,
-  ], :int
-
-  attach_function 'labs', [
-    :long,
-  ], :long
-
-  attach_function 'llabs', [
-    :long-long,
-  ], :long-long
-
-  attach_function 'div', [
-    :int,
-    :int,
-  ], :div_t
-
-  attach_function 'ldiv', [
-    :long,
-    :long,
-  ], :ldiv_t
-
-  attach_function 'lldiv', [
-    :long-long,
-    :long-long,
-  ], :lldiv_t
-
-  attach_function 'ecvt', [
-    :double,
-    :int,
-    :pointer,
-    :pointer,
-  ], :string
-
-  attach_function 'fcvt', [
-    :double,
-    :int,
-    :pointer,
-    :pointer,
-  ], :string
-
-  attach_function 'gcvt', [
-    :double,
-    :int,
-    :string,
-  ], :string
-
-  attach_function 'qecvt', [
-    :long-double,
-    :int,
-    :pointer,
-    :pointer,
-  ], :string
-
-  attach_function 'qfcvt', [
-    :long-double,
-    :int,
-    :pointer,
-    :pointer,
-  ], :string
-
-  attach_function 'qgcvt', [
-    :long-double,
-    :int,
-    :string,
-  ], :string
-
-  attach_function 'ecvt_r', [
-    :double,
-    :int,
-    :pointer,
-    :pointer,
-    :string,
-    :size_t,
-  ], :int
-
-  attach_function 'fcvt_r', [
-    :double,
-    :int,
-    :pointer,
-    :pointer,
-    :string,
-    :size_t,
-  ], :int
-
-  attach_function 'qecvt_r', [
-    :long-double,
-    :int,
-    :pointer,
-    :pointer,
-    :string,
-    :size_t,
-  ], :int
-
-  attach_function 'qfcvt_r', [
-    :long-double,
-    :int,
-    :pointer,
-    :pointer,
-    :string,
-    :size_t,
-  ], :int
-
-  attach_function 'mblen', [
-    :string,
-    :size_t,
-  ], :int
-
-  attach_function 'mbtowc', [
-    :pointer,
-    :string,
-    :size_t,
-  ], :int
-
-  attach_function 'wctomb', [
-    :string,
-    :wchar_t,
-  ], :int
-
-  attach_function 'mbstowcs', [
-    :pointer,
-    :string,
-    :size_t,
-  ], :size_t
-
-  attach_function 'wcstombs', [
-    :string,
-    :pointer,
-    :size_t,
-  ], :size_t
-
-  attach_function 'rpmatch', [
-    :string,
-  ], :int
-
-  attach_function 'getsubopt', [
-    :pointer,
-    :pointer,
-    :pointer,
-  ], :int
-
-  attach_function 'getloadavg', [
-    :pointer,
-    :int,
-  ], :int
-
   enum :ExpressionValueType, [
     :ExpressionValueType_Unknown, 0,
     :ExpressionValueType_String, 1,
@@ -1126,7 +72,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_18 < FFI::Union
+  class Anon_Type_1 < FFI::Union
   end
 
    = 
@@ -1134,7 +80,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_20 < FFI::Union
+  class Anon_Type_3 < FFI::Union
   end
 
    = 
@@ -1142,7 +88,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_22 < FFI::Union
+  class Anon_Type_5 < FFI::Union
   end
 
    = 
@@ -1150,7 +96,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_24 < FFI::Union
+  class Anon_Type_7 < FFI::Union
   end
 
    = 
@@ -1158,7 +104,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_26 < FFI::Union
+  class Anon_Type_9 < FFI::Union
   end
 
    = 
@@ -1166,7 +112,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_28 < FFI::Union
+  class Anon_Type_11 < FFI::Union
   end
 
    = 
@@ -1174,7 +120,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_30 < FFI::Union
+  class Anon_Type_13 < FFI::Union
   end
 
    = 
@@ -1182,7 +128,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_32 < FFI::Union
+  class Anon_Type_15 < FFI::Union
   end
 
    = 
@@ -1190,7 +136,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_34 < FFI::Union
+  class Anon_Type_17 < FFI::Union
   end
 
    = 
@@ -1198,7 +144,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_36 < FFI::Union
+  class Anon_Type_19 < FFI::Union
   end
 
    = 
@@ -1206,7 +152,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_38 < FFI::Union
+  class Anon_Type_21 < FFI::Union
   end
 
    = 
@@ -1214,7 +160,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_40 < FFI::Union
+  class Anon_Type_23 < FFI::Union
   end
 
    = 
@@ -1222,7 +168,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_42 < FFI::Union
+  class Anon_Type_25 < FFI::Union
   end
 
    = 
@@ -1230,7 +176,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_44 < FFI::Union
+  class Anon_Type_27 < FFI::Union
   end
 
    = 
@@ -1238,7 +184,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_46 < FFI::Union
+  class Anon_Type_29 < FFI::Union
   end
 
    = 
@@ -1246,7 +192,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_48 < FFI::Union
+  class Anon_Type_31 < FFI::Union
   end
 
    = 
@@ -1254,7 +200,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_50 < FFI::Union
+  class Anon_Type_33 < FFI::Union
   end
 
    = 
@@ -1262,7 +208,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_52 < FFI::Union
+  class Anon_Type_35 < FFI::Union
   end
 
    = 
@@ -1270,7 +216,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_54 < FFI::Union
+  class Anon_Type_37 < FFI::Union
   end
 
    = 
@@ -1278,7 +224,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_56 < FFI::Union
+  class Anon_Type_39 < FFI::Union
   end
 
    = 
@@ -1286,7 +232,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_58 < FFI::Union
+  class Anon_Type_41 < FFI::Union
   end
 
    = 
@@ -1294,7 +240,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_60 < FFI::Union
+  class Anon_Type_43 < FFI::Union
   end
 
    = 
@@ -1302,7 +248,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_62 < FFI::Union
+  class Anon_Type_45 < FFI::Union
   end
 
    = 
@@ -1310,7 +256,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_64 < FFI::Union
+  class Anon_Type_47 < FFI::Union
   end
 
    = 
@@ -1318,7 +264,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_66 < FFI::Union
+  class Anon_Type_49 < FFI::Union
   end
 
    = 
@@ -1326,7 +272,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_68 < FFI::Union
+  class Anon_Type_51 < FFI::Union
   end
 
    = 
@@ -1334,7 +280,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_70 < FFI::Union
+  class Anon_Type_53 < FFI::Union
   end
 
    = 
@@ -1342,7 +288,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_72 < FFI::Union
+  class Anon_Type_55 < FFI::Union
   end
 
    = 
@@ -1350,7 +296,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_74 < FFI::Union
+  class Anon_Type_57 < FFI::Union
   end
 
    = 
@@ -1358,7 +304,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_76 < FFI::Union
+  class Anon_Type_59 < FFI::Union
   end
 
    = 
@@ -1366,7 +312,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_78 < FFI::Union
+  class Anon_Type_61 < FFI::Union
   end
 
    = 
@@ -1374,7 +320,7 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_80 < FFI::Union
+  class Anon_Type_63 < FFI::Union
   end
 
    = 
@@ -1382,12 +328,12 @@ module PactFfi
   class  < FFI::Union
   end
 
-  class Anon_Type_82 < FFI::Union
+  class Anon_Type_65 < FFI::Union
   end
 
    = 
 
-  class Anon_Type_84 < FFI::Union
+  class Anon_Type_67 < FFI::Union
   end
 
   class  < FFI::Union
@@ -1398,7 +344,7 @@ module PactFfi
 
    = 
 
-  class Anon_Type_86 < FFI::Union
+  class Anon_Type_69 < FFI::Union
   end
 
   class  < FFI::Union
@@ -1443,26 +389,26 @@ module PactFfi
 
   typedef :StringResult_Tag, :StringResult_Tag
 
-  class Anon_Type_88 < FFI::Union
+  class Anon_Type_71 < FFI::Union
     layout \
       :ok, :string
   end
 
-  class Anon_Type_89 < FFI::Union
+  class Anon_Type_72 < FFI::Union
     layout \
       :failed, :string
   end
 
-  class Anon_Type_87 < FFI::Union
+  class Anon_Type_70 < FFI::Union
     layout \
-      :, Anon_Type_88,
-      :, Anon_Type_89
+      :, Anon_Type_71,
+      :, Anon_Type_72
   end
 
   class  < FFI::Union
     layout \
       :tag, :StringResult_Tag,
-      :, Anon_Type_87
+      :, Anon_Type_70
   end
 
    = 
@@ -1493,13 +439,13 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_91 < FFI::Union
+  class Anon_Type_74 < FFI::Union
   end
 
-  class Anon_Type_93 < FFI::Union
+  class Anon_Type_76 < FFI::Union
   end
 
-  class Anon_Type_95 < FFI::Union
+  class Anon_Type_78 < FFI::Union
   end
 
   attach_function 'pactffi_match_message', [
@@ -1507,69 +453,69 @@ module PactFfi
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_97 < FFI::Union
+  class Anon_Type_80 < FFI::Union
   end
 
-  class Anon_Type_99 < FFI::Union
+  class Anon_Type_82 < FFI::Union
   end
 
   attach_function 'pactffi_mismatches_get_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_101 < FFI::Union
+  class Anon_Type_84 < FFI::Union
   end
 
   attach_function 'pactffi_mismatches_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_103 < FFI::Union
+  class Anon_Type_86 < FFI::Union
   end
 
-  class Anon_Type_105 < FFI::Union
+  class Anon_Type_88 < FFI::Union
   end
 
   attach_function 'pactffi_mismatches_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_107 < FFI::Union
+  class Anon_Type_90 < FFI::Union
   end
 
   attach_function 'pactffi_mismatches_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_109 < FFI::Union
+  class Anon_Type_92 < FFI::Union
   end
 
   attach_function 'pactffi_mismatch_to_json', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_111 < FFI::Union
+  class Anon_Type_94 < FFI::Union
   end
 
   attach_function 'pactffi_mismatch_type', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_113 < FFI::Union
+  class Anon_Type_96 < FFI::Union
   end
 
   attach_function 'pactffi_mismatch_summary', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_115 < FFI::Union
+  class Anon_Type_98 < FFI::Union
   end
 
   attach_function 'pactffi_mismatch_description', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_117 < FFI::Union
+  class Anon_Type_100 < FFI::Union
   end
 
   attach_function 'pactffi_mismatch_ansi_description', [
@@ -1613,75 +559,75 @@ module PactFfi
     :string,
   ], :string
 
-  class Anon_Type_119 < FFI::Union
+  class Anon_Type_102 < FFI::Union
   end
 
   attach_function 'pactffi_parse_pact_json', [
     :string,
   ], :pointer.ptr
 
-  class Anon_Type_121 < FFI::Union
+  class Anon_Type_104 < FFI::Union
   end
 
   attach_function 'pactffi_pact_model_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_123 < FFI::Union
+  class Anon_Type_106 < FFI::Union
   end
 
-  class Anon_Type_125 < FFI::Union
+  class Anon_Type_108 < FFI::Union
   end
 
   attach_function 'pactffi_pact_model_interaction_iterator', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_127 < FFI::Union
+  class Anon_Type_110 < FFI::Union
   end
 
   attach_function 'pactffi_pact_spec_version', [
     :pointer.ptr,
   ], :PactSpecification
 
-  class Anon_Type_129 < FFI::Union
+  class Anon_Type_112 < FFI::Union
   end
 
   attach_function 'pactffi_pact_interaction_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_131 < FFI::Union
+  class Anon_Type_114 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_new', [
   ], :pointer.ptr
 
-  class Anon_Type_133 < FFI::Union
+  class Anon_Type_116 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_135 < FFI::Union
+  class Anon_Type_118 < FFI::Union
   end
 
-  class Anon_Type_137 < FFI::Union
+  class Anon_Type_120 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_get_contents', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_139 < FFI::Union
+  class Anon_Type_122 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_get_contents_str', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_141 < FFI::Union
+  class Anon_Type_124 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_set_contents_str', [
@@ -1690,21 +636,21 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_143 < FFI::Union
+  class Anon_Type_126 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_get_contents_length', [
     :pointer.ptr,
   ], :size_t
 
-  class Anon_Type_145 < FFI::Union
+  class Anon_Type_128 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_get_contents_bin', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_147 < FFI::Union
+  class Anon_Type_130 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_set_contents_bin', [
@@ -1714,14 +660,14 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_149 < FFI::Union
+  class Anon_Type_132 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_get_description', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_151 < FFI::Union
+  class Anon_Type_134 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_set_description', [
@@ -1729,10 +675,10 @@ module PactFfi
     :string,
   ], :int
 
-  class Anon_Type_153 < FFI::Union
+  class Anon_Type_136 < FFI::Union
   end
 
-  class Anon_Type_155 < FFI::Union
+  class Anon_Type_138 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_get_provider_state', [
@@ -1740,48 +686,48 @@ module PactFfi
     :uint,
   ], :pointer.ptr
 
-  class Anon_Type_157 < FFI::Union
+  class Anon_Type_140 < FFI::Union
   end
 
-  class Anon_Type_159 < FFI::Union
+  class Anon_Type_142 < FFI::Union
   end
 
   attach_function 'pactffi_async_message_get_provider_state_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_161 < FFI::Union
+  class Anon_Type_144 < FFI::Union
   end
 
   attach_function 'pactffi_consumer_get_name', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_163 < FFI::Union
+  class Anon_Type_146 < FFI::Union
   end
 
-  class Anon_Type_165 < FFI::Union
+  class Anon_Type_148 < FFI::Union
   end
 
   attach_function 'pactffi_pact_get_consumer', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_167 < FFI::Union
+  class Anon_Type_150 < FFI::Union
   end
 
   attach_function 'pactffi_pact_consumer_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_169 < FFI::Union
+  class Anon_Type_152 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_get_contents_str', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_171 < FFI::Union
+  class Anon_Type_154 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_set_contents_str', [
@@ -1790,21 +736,21 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_173 < FFI::Union
+  class Anon_Type_156 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_get_contents_length', [
     :pointer.ptr,
   ], :size_t
 
-  class Anon_Type_175 < FFI::Union
+  class Anon_Type_158 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_get_contents_bin', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_177 < FFI::Union
+  class Anon_Type_160 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_set_contents_bin', [
@@ -1814,20 +760,20 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_179 < FFI::Union
+  class Anon_Type_162 < FFI::Union
   end
 
-  class Anon_Type_181 < FFI::Union
+  class Anon_Type_164 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_get_metadata_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_183 < FFI::Union
+  class Anon_Type_166 < FFI::Union
   end
 
-  class Anon_Type_185 < FFI::Union
+  class Anon_Type_168 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_get_matching_rule_iter', [
@@ -1835,10 +781,10 @@ module PactFfi
     :MatchingRuleCategory,
   ], :pointer.ptr
 
-  class Anon_Type_187 < FFI::Union
+  class Anon_Type_170 < FFI::Union
   end
 
-  class Anon_Type_189 < FFI::Union
+  class Anon_Type_172 < FFI::Union
   end
 
   attach_function 'pactffi_request_contents_get_matching_rule_iter', [
@@ -1846,10 +792,10 @@ module PactFfi
     :MatchingRuleCategory,
   ], :pointer.ptr
 
-  class Anon_Type_191 < FFI::Union
+  class Anon_Type_174 < FFI::Union
   end
 
-  class Anon_Type_193 < FFI::Union
+  class Anon_Type_176 < FFI::Union
   end
 
   attach_function 'pactffi_response_contents_get_matching_rule_iter', [
@@ -1857,10 +803,10 @@ module PactFfi
     :MatchingRuleCategory,
   ], :pointer.ptr
 
-  class Anon_Type_195 < FFI::Union
+  class Anon_Type_178 < FFI::Union
   end
 
-  class Anon_Type_197 < FFI::Union
+  class Anon_Type_180 < FFI::Union
   end
 
   attach_function 'pactffi_message_contents_get_generators_iter', [
@@ -1868,10 +814,10 @@ module PactFfi
     :GeneratorCategory,
   ], :pointer.ptr
 
-  class Anon_Type_199 < FFI::Union
+  class Anon_Type_182 < FFI::Union
   end
 
-  class Anon_Type_201 < FFI::Union
+  class Anon_Type_184 < FFI::Union
   end
 
   attach_function 'pactffi_request_contents_get_generators_iter', [
@@ -1879,10 +825,10 @@ module PactFfi
     :GeneratorCategory,
   ], :pointer.ptr
 
-  class Anon_Type_203 < FFI::Union
+  class Anon_Type_186 < FFI::Union
   end
 
-  class Anon_Type_205 < FFI::Union
+  class Anon_Type_188 < FFI::Union
   end
 
   attach_function 'pactffi_response_contents_get_generators_iter', [
@@ -1890,103 +836,103 @@ module PactFfi
     :GeneratorCategory,
   ], :pointer.ptr
 
-  class Anon_Type_207 < FFI::Union
+  class Anon_Type_190 < FFI::Union
   end
 
   attach_function 'pactffi_parse_matcher_definition', [
     :string,
   ], :pointer.ptr
 
-  class Anon_Type_209 < FFI::Union
+  class Anon_Type_192 < FFI::Union
   end
 
   attach_function 'pactffi_matcher_definition_error', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_211 < FFI::Union
+  class Anon_Type_194 < FFI::Union
   end
 
   attach_function 'pactffi_matcher_definition_value', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_213 < FFI::Union
+  class Anon_Type_196 < FFI::Union
   end
 
   attach_function 'pactffi_matcher_definition_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_215 < FFI::Union
+  class Anon_Type_198 < FFI::Union
   end
 
-  class Anon_Type_217 < FFI::Union
+  class Anon_Type_200 < FFI::Union
   end
 
   attach_function 'pactffi_matcher_definition_generator', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_219 < FFI::Union
+  class Anon_Type_202 < FFI::Union
   end
 
   attach_function 'pactffi_matcher_definition_value_type', [
     :pointer.ptr,
   ], :ExpressionValueType
 
-  class Anon_Type_221 < FFI::Union
+  class Anon_Type_204 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rule_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_223 < FFI::Union
+  class Anon_Type_206 < FFI::Union
   end
 
-  class Anon_Type_225 < FFI::Union
+  class Anon_Type_208 < FFI::Union
   end
 
   attach_function 'pactffi_matcher_definition_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_227 < FFI::Union
+  class Anon_Type_210 < FFI::Union
   end
 
-  class Anon_Type_229 < FFI::Union
+  class Anon_Type_212 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rule_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_231 < FFI::Union
+  class Anon_Type_214 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rule_id', [
     :pointer.ptr,
   ], :uint16_t
 
-  class Anon_Type_233 < FFI::Union
+  class Anon_Type_216 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rule_value', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_235 < FFI::Union
+  class Anon_Type_218 < FFI::Union
   end
 
-  class Anon_Type_237 < FFI::Union
+  class Anon_Type_220 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rule_pointer', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_239 < FFI::Union
+  class Anon_Type_222 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rule_reference_name', [
@@ -1998,14 +944,14 @@ module PactFfi
     :string,
   ], :int
 
-  class Anon_Type_241 < FFI::Union
+  class Anon_Type_224 < FFI::Union
   end
 
   attach_function 'pactffi_generator_to_json', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_243 < FFI::Union
+  class Anon_Type_226 < FFI::Union
   end
 
   attach_function 'pactffi_generator_generate_string', [
@@ -2013,7 +959,7 @@ module PactFfi
     :string,
   ], :string
 
-  class Anon_Type_245 < FFI::Union
+  class Anon_Type_228 < FFI::Union
   end
 
   attach_function 'pactffi_generator_generate_integer', [
@@ -2021,14 +967,14 @@ module PactFfi
     :string,
   ], :unsigned-short
 
-  class Anon_Type_247 < FFI::Union
+  class Anon_Type_230 < FFI::Union
   end
 
   attach_function 'pactffi_generators_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_249 < FFI::Union
+  class Anon_Type_232 < FFI::Union
   end
 
   attach_function 'pactffi_generators_iter_next', [
@@ -2039,37 +985,37 @@ module PactFfi
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_251 < FFI::Union
+  class Anon_Type_234 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_new', [
   ], :pointer.ptr
 
-  class Anon_Type_253 < FFI::Union
+  class Anon_Type_236 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_255 < FFI::Union
+  class Anon_Type_238 < FFI::Union
   end
 
-  class Anon_Type_257 < FFI::Union
+  class Anon_Type_240 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_request', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_259 < FFI::Union
+  class Anon_Type_242 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_request_contents', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_261 < FFI::Union
+  class Anon_Type_244 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_set_request_contents', [
@@ -2078,21 +1024,21 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_263 < FFI::Union
+  class Anon_Type_246 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_request_contents_length', [
     :pointer.ptr,
   ], :size_t
 
-  class Anon_Type_265 < FFI::Union
+  class Anon_Type_248 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_request_contents_bin', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_267 < FFI::Union
+  class Anon_Type_250 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_set_request_contents_bin', [
@@ -2102,24 +1048,24 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_269 < FFI::Union
+  class Anon_Type_252 < FFI::Union
   end
 
-  class Anon_Type_271 < FFI::Union
+  class Anon_Type_254 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_response', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_273 < FFI::Union
+  class Anon_Type_256 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_response_contents', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_275 < FFI::Union
+  class Anon_Type_258 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_set_response_contents', [
@@ -2128,21 +1074,21 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_277 < FFI::Union
+  class Anon_Type_260 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_response_contents_length', [
     :pointer.ptr,
   ], :size_t
 
-  class Anon_Type_279 < FFI::Union
+  class Anon_Type_262 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_response_contents_bin', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_281 < FFI::Union
+  class Anon_Type_264 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_set_response_contents_bin', [
@@ -2152,14 +1098,14 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_283 < FFI::Union
+  class Anon_Type_266 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_description', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_285 < FFI::Union
+  class Anon_Type_268 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_set_description', [
@@ -2167,10 +1113,10 @@ module PactFfi
     :string,
   ], :int
 
-  class Anon_Type_287 < FFI::Union
+  class Anon_Type_270 < FFI::Union
   end
 
-  class Anon_Type_289 < FFI::Union
+  class Anon_Type_272 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_provider_state', [
@@ -2178,139 +1124,139 @@ module PactFfi
     :uint,
   ], :pointer.ptr
 
-  class Anon_Type_291 < FFI::Union
+  class Anon_Type_274 < FFI::Union
   end
 
-  class Anon_Type_293 < FFI::Union
+  class Anon_Type_276 < FFI::Union
   end
 
   attach_function 'pactffi_sync_http_get_provider_state_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_295 < FFI::Union
+  class Anon_Type_278 < FFI::Union
   end
 
-  class Anon_Type_297 < FFI::Union
+  class Anon_Type_280 < FFI::Union
   end
 
   attach_function 'pactffi_pact_interaction_as_synchronous_http', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_299 < FFI::Union
+  class Anon_Type_282 < FFI::Union
   end
 
-  class Anon_Type_301 < FFI::Union
+  class Anon_Type_284 < FFI::Union
   end
 
   attach_function 'pactffi_pact_interaction_as_message', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_303 < FFI::Union
+  class Anon_Type_286 < FFI::Union
   end
 
-  class Anon_Type_305 < FFI::Union
+  class Anon_Type_288 < FFI::Union
   end
 
   attach_function 'pactffi_pact_interaction_as_asynchronous_message', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_307 < FFI::Union
+  class Anon_Type_290 < FFI::Union
   end
 
-  class Anon_Type_309 < FFI::Union
+  class Anon_Type_292 < FFI::Union
   end
 
   attach_function 'pactffi_pact_interaction_as_synchronous_message', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_311 < FFI::Union
+  class Anon_Type_294 < FFI::Union
   end
 
   attach_function 'pactffi_pact_message_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_313 < FFI::Union
+  class Anon_Type_296 < FFI::Union
   end
 
-  class Anon_Type_315 < FFI::Union
+  class Anon_Type_298 < FFI::Union
   end
 
   attach_function 'pactffi_pact_message_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_317 < FFI::Union
+  class Anon_Type_300 < FFI::Union
   end
 
-  class Anon_Type_319 < FFI::Union
+  class Anon_Type_302 < FFI::Union
   end
 
   attach_function 'pactffi_pact_sync_message_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_321 < FFI::Union
+  class Anon_Type_304 < FFI::Union
   end
 
   attach_function 'pactffi_pact_sync_message_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_323 < FFI::Union
+  class Anon_Type_306 < FFI::Union
   end
 
-  class Anon_Type_325 < FFI::Union
+  class Anon_Type_308 < FFI::Union
   end
 
   attach_function 'pactffi_pact_sync_http_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_327 < FFI::Union
+  class Anon_Type_310 < FFI::Union
   end
 
   attach_function 'pactffi_pact_sync_http_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_329 < FFI::Union
+  class Anon_Type_312 < FFI::Union
   end
 
-  class Anon_Type_331 < FFI::Union
+  class Anon_Type_314 < FFI::Union
   end
 
   attach_function 'pactffi_pact_interaction_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_333 < FFI::Union
+  class Anon_Type_316 < FFI::Union
   end
 
   attach_function 'pactffi_pact_interaction_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_335 < FFI::Union
+  class Anon_Type_318 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rule_to_json', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_337 < FFI::Union
+  class Anon_Type_320 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rules_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_339 < FFI::Union
+  class Anon_Type_322 < FFI::Union
   end
 
   attach_function 'pactffi_matching_rules_iter_next', [
@@ -2321,13 +1267,13 @@ module PactFfi
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_341 < FFI::Union
+  class Anon_Type_324 < FFI::Union
   end
 
   attach_function 'pactffi_message_new', [
   ], :pointer.ptr
 
-  class Anon_Type_343 < FFI::Union
+  class Anon_Type_326 < FFI::Union
   end
 
   attach_function 'pactffi_message_new_from_json', [
@@ -2336,7 +1282,7 @@ module PactFfi
     :PactSpecification,
   ], :pointer.ptr
 
-  class Anon_Type_345 < FFI::Union
+  class Anon_Type_328 < FFI::Union
   end
 
   attach_function 'pactffi_message_new_from_body', [
@@ -2344,21 +1290,21 @@ module PactFfi
     :string,
   ], :pointer.ptr
 
-  class Anon_Type_347 < FFI::Union
+  class Anon_Type_330 < FFI::Union
   end
 
   attach_function 'pactffi_message_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_349 < FFI::Union
+  class Anon_Type_332 < FFI::Union
   end
 
   attach_function 'pactffi_message_get_contents', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_351 < FFI::Union
+  class Anon_Type_334 < FFI::Union
   end
 
   attach_function 'pactffi_message_set_contents', [
@@ -2367,21 +1313,21 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_353 < FFI::Union
+  class Anon_Type_336 < FFI::Union
   end
 
   attach_function 'pactffi_message_get_contents_length', [
     :pointer.ptr,
   ], :size_t
 
-  class Anon_Type_355 < FFI::Union
+  class Anon_Type_338 < FFI::Union
   end
 
   attach_function 'pactffi_message_get_contents_bin', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_357 < FFI::Union
+  class Anon_Type_340 < FFI::Union
   end
 
   attach_function 'pactffi_message_set_contents_bin', [
@@ -2391,14 +1337,14 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_359 < FFI::Union
+  class Anon_Type_342 < FFI::Union
   end
 
   attach_function 'pactffi_message_get_description', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_361 < FFI::Union
+  class Anon_Type_344 < FFI::Union
   end
 
   attach_function 'pactffi_message_set_description', [
@@ -2406,10 +1352,10 @@ module PactFfi
     :string,
   ], :int
 
-  class Anon_Type_363 < FFI::Union
+  class Anon_Type_346 < FFI::Union
   end
 
-  class Anon_Type_365 < FFI::Union
+  class Anon_Type_348 < FFI::Union
   end
 
   attach_function 'pactffi_message_get_provider_state', [
@@ -2417,34 +1363,34 @@ module PactFfi
     :uint,
   ], :pointer.ptr
 
-  class Anon_Type_367 < FFI::Union
+  class Anon_Type_350 < FFI::Union
   end
 
-  class Anon_Type_369 < FFI::Union
+  class Anon_Type_352 < FFI::Union
   end
 
   attach_function 'pactffi_message_get_provider_state_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_371 < FFI::Union
+  class Anon_Type_354 < FFI::Union
   end
 
-  class Anon_Type_373 < FFI::Union
+  class Anon_Type_356 < FFI::Union
   end
 
   attach_function 'pactffi_provider_state_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_375 < FFI::Union
+  class Anon_Type_358 < FFI::Union
   end
 
   attach_function 'pactffi_provider_state_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_377 < FFI::Union
+  class Anon_Type_360 < FFI::Union
   end
 
   attach_function 'pactffi_message_find_metadata', [
@@ -2452,7 +1398,7 @@ module PactFfi
     :string,
   ], :string
 
-  class Anon_Type_379 < FFI::Union
+  class Anon_Type_362 < FFI::Union
   end
 
   attach_function 'pactffi_message_insert_metadata', [
@@ -2461,24 +1407,24 @@ module PactFfi
     :string,
   ], :int
 
-  class Anon_Type_381 < FFI::Union
+  class Anon_Type_364 < FFI::Union
   end
 
   attach_function 'pactffi_message_metadata_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_383 < FFI::Union
+  class Anon_Type_366 < FFI::Union
   end
 
-  class Anon_Type_385 < FFI::Union
+  class Anon_Type_368 < FFI::Union
   end
 
   attach_function 'pactffi_message_get_metadata_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_387 < FFI::Union
+  class Anon_Type_370 < FFI::Union
   end
 
   attach_function 'pactffi_message_metadata_iter_delete', [
@@ -2489,7 +1435,7 @@ module PactFfi
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_389 < FFI::Union
+  class Anon_Type_372 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_new_from_json', [
@@ -2497,61 +1443,61 @@ module PactFfi
     :string,
   ], :pointer.ptr
 
-  class Anon_Type_391 < FFI::Union
+  class Anon_Type_374 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_393 < FFI::Union
+  class Anon_Type_376 < FFI::Union
   end
 
-  class Anon_Type_395 < FFI::Union
+  class Anon_Type_378 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_get_consumer', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_397 < FFI::Union
+  class Anon_Type_380 < FFI::Union
   end
 
-  class Anon_Type_399 < FFI::Union
+  class Anon_Type_382 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_get_provider', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_401 < FFI::Union
+  class Anon_Type_384 < FFI::Union
   end
 
-  class Anon_Type_403 < FFI::Union
+  class Anon_Type_386 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_get_message_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_405 < FFI::Union
+  class Anon_Type_388 < FFI::Union
   end
 
-  class Anon_Type_407 < FFI::Union
+  class Anon_Type_390 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_message_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_409 < FFI::Union
+  class Anon_Type_392 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_message_iter_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_411 < FFI::Union
+  class Anon_Type_394 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_find_metadata', [
@@ -2560,24 +1506,24 @@ module PactFfi
     :string,
   ], :string
 
-  class Anon_Type_413 < FFI::Union
+  class Anon_Type_396 < FFI::Union
   end
 
-  class Anon_Type_415 < FFI::Union
+  class Anon_Type_398 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_get_metadata_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_417 < FFI::Union
+  class Anon_Type_400 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_metadata_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_419 < FFI::Union
+  class Anon_Type_402 < FFI::Union
   end
 
   attach_function 'pactffi_message_pact_metadata_iter_delete', [
@@ -2588,62 +1534,62 @@ module PactFfi
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_421 < FFI::Union
+  class Anon_Type_404 < FFI::Union
   end
 
   attach_function 'pactffi_provider_get_name', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_423 < FFI::Union
+  class Anon_Type_406 < FFI::Union
   end
 
-  class Anon_Type_425 < FFI::Union
+  class Anon_Type_408 < FFI::Union
   end
 
   attach_function 'pactffi_pact_get_provider', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_427 < FFI::Union
+  class Anon_Type_410 < FFI::Union
   end
 
   attach_function 'pactffi_pact_provider_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_429 < FFI::Union
+  class Anon_Type_412 < FFI::Union
   end
 
   attach_function 'pactffi_provider_state_get_name', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_431 < FFI::Union
+  class Anon_Type_414 < FFI::Union
   end
 
-  class Anon_Type_433 < FFI::Union
+  class Anon_Type_416 < FFI::Union
   end
 
   attach_function 'pactffi_provider_state_get_param_iter', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_435 < FFI::Union
+  class Anon_Type_418 < FFI::Union
   end
 
   attach_function 'pactffi_provider_state_param_iter_next', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_437 < FFI::Union
+  class Anon_Type_420 < FFI::Union
   end
 
   attach_function 'pactffi_provider_state_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_439 < FFI::Union
+  class Anon_Type_422 < FFI::Union
   end
 
   attach_function 'pactffi_provider_state_param_iter_delete', [
@@ -2654,27 +1600,27 @@ module PactFfi
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_441 < FFI::Union
+  class Anon_Type_424 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_new', [
   ], :pointer.ptr
 
-  class Anon_Type_443 < FFI::Union
+  class Anon_Type_426 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_delete', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_445 < FFI::Union
+  class Anon_Type_428 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_request_contents_str', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_447 < FFI::Union
+  class Anon_Type_430 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_set_request_contents_str', [
@@ -2683,21 +1629,21 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_449 < FFI::Union
+  class Anon_Type_432 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_request_contents_length', [
     :pointer.ptr,
   ], :size_t
 
-  class Anon_Type_451 < FFI::Union
+  class Anon_Type_434 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_request_contents_bin', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_453 < FFI::Union
+  class Anon_Type_436 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_set_request_contents_bin', [
@@ -2707,24 +1653,24 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_455 < FFI::Union
+  class Anon_Type_438 < FFI::Union
   end
 
-  class Anon_Type_457 < FFI::Union
+  class Anon_Type_440 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_request_contents', [
     :pointer.ptr,
   ], :pointer.ptr
 
-  class Anon_Type_459 < FFI::Union
+  class Anon_Type_442 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_number_responses', [
     :pointer.ptr,
   ], :size_t
 
-  class Anon_Type_461 < FFI::Union
+  class Anon_Type_444 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_response_contents_str', [
@@ -2732,7 +1678,7 @@ module PactFfi
     :size_t,
   ], :string
 
-  class Anon_Type_463 < FFI::Union
+  class Anon_Type_446 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_set_response_contents_str', [
@@ -2742,7 +1688,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_465 < FFI::Union
+  class Anon_Type_448 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_response_contents_length', [
@@ -2750,7 +1696,7 @@ module PactFfi
     :size_t,
   ], :size_t
 
-  class Anon_Type_467 < FFI::Union
+  class Anon_Type_450 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_response_contents_bin', [
@@ -2758,7 +1704,7 @@ module PactFfi
     :size_t,
   ], :string
 
-  class Anon_Type_469 < FFI::Union
+  class Anon_Type_452 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_set_response_contents_bin', [
@@ -2769,10 +1715,10 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_471 < FFI::Union
+  class Anon_Type_454 < FFI::Union
   end
 
-  class Anon_Type_473 < FFI::Union
+  class Anon_Type_456 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_response_contents', [
@@ -2780,14 +1726,14 @@ module PactFfi
     :size_t,
   ], :pointer.ptr
 
-  class Anon_Type_475 < FFI::Union
+  class Anon_Type_458 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_description', [
     :pointer.ptr,
   ], :string
 
-  class Anon_Type_477 < FFI::Union
+  class Anon_Type_460 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_set_description', [
@@ -2795,10 +1741,10 @@ module PactFfi
     :string,
   ], :int
 
-  class Anon_Type_479 < FFI::Union
+  class Anon_Type_462 < FFI::Union
   end
 
-  class Anon_Type_481 < FFI::Union
+  class Anon_Type_464 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_provider_state', [
@@ -2806,10 +1752,10 @@ module PactFfi
     :uint,
   ], :pointer.ptr
 
-  class Anon_Type_483 < FFI::Union
+  class Anon_Type_466 < FFI::Union
   end
 
-  class Anon_Type_485 < FFI::Union
+  class Anon_Type_468 < FFI::Union
   end
 
   attach_function 'pactffi_sync_message_get_provider_state_iter', [
@@ -3006,21 +1952,21 @@ module PactFfi
     :string,
   ], 
 
-  class Anon_Type_487 < FFI::Union
+  class Anon_Type_470 < FFI::Union
   end
 
   attach_function 'pactffi_pact_handle_get_message_iter', [
     :PactHandle,
   ], :pointer.ptr
 
-  class Anon_Type_489 < FFI::Union
+  class Anon_Type_472 < FFI::Union
   end
 
   attach_function 'pactffi_pact_handle_get_sync_message_iter', [
     :PactHandle,
   ], :pointer.ptr
 
-  class Anon_Type_491 < FFI::Union
+  class Anon_Type_474 < FFI::Union
   end
 
   attach_function 'pactffi_pact_handle_get_sync_http_iter', [
@@ -3107,13 +2053,13 @@ module PactFfi
     :string,
   ], :int32_t
 
-  class Anon_Type_493 < FFI::Union
+  class Anon_Type_476 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_new', [
   ], :pointer.ptr
 
-  class Anon_Type_495 < FFI::Union
+  class Anon_Type_478 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_new_for_application', [
@@ -3121,14 +2067,14 @@ module PactFfi
     :string,
   ], :pointer.ptr
 
-  class Anon_Type_497 < FFI::Union
+  class Anon_Type_480 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_shutdown', [
     :pointer.ptr,
   ], :void
 
-  class Anon_Type_499 < FFI::Union
+  class Anon_Type_482 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_provider_info', [
@@ -3140,7 +2086,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_501 < FFI::Union
+  class Anon_Type_484 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_add_provider_transport', [
@@ -3151,7 +2097,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_503 < FFI::Union
+  class Anon_Type_486 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_filter_info', [
@@ -3161,7 +2107,7 @@ module PactFfi
     :uchar,
   ], :void
 
-  class Anon_Type_505 < FFI::Union
+  class Anon_Type_488 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_provider_state', [
@@ -3171,7 +2117,7 @@ module PactFfi
     :uchar,
   ], :void
 
-  class Anon_Type_507 < FFI::Union
+  class Anon_Type_490 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_verification_options', [
@@ -3180,7 +2126,7 @@ module PactFfi
     :ulong,
   ], :int
 
-  class Anon_Type_509 < FFI::Union
+  class Anon_Type_492 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_coloured_output', [
@@ -3188,7 +2134,7 @@ module PactFfi
     :uchar,
   ], :int
 
-  class Anon_Type_511 < FFI::Union
+  class Anon_Type_494 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_no_pacts_is_error', [
@@ -3196,7 +2142,7 @@ module PactFfi
     :uchar,
   ], :int
 
-  class Anon_Type_513 < FFI::Union
+  class Anon_Type_496 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_publish_options', [
@@ -3208,7 +2154,7 @@ module PactFfi
     :string,
   ], :int
 
-  class Anon_Type_515 < FFI::Union
+  class Anon_Type_498 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_set_consumer_filters', [
@@ -3217,7 +2163,7 @@ module PactFfi
     :unsigned-short,
   ], :void
 
-  class Anon_Type_517 < FFI::Union
+  class Anon_Type_500 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_add_custom_header', [
@@ -3226,7 +2172,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_519 < FFI::Union
+  class Anon_Type_502 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_add_file_source', [
@@ -3234,7 +2180,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_521 < FFI::Union
+  class Anon_Type_504 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_add_directory_source', [
@@ -3242,7 +2188,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_523 < FFI::Union
+  class Anon_Type_506 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_url_source', [
@@ -3253,7 +2199,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_525 < FFI::Union
+  class Anon_Type_508 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_broker_source', [
@@ -3264,7 +2210,7 @@ module PactFfi
     :string,
   ], :void
 
-  class Anon_Type_527 < FFI::Union
+  class Anon_Type_510 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_broker_source_with_selectors', [
@@ -3284,7 +2230,7 @@ module PactFfi
     :unsigned-short,
   ], :void
 
-  class Anon_Type_529 < FFI::Union
+  class Anon_Type_512 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_execute', [
@@ -3294,7 +2240,7 @@ module PactFfi
   attach_function 'pactffi_verifier_cli_args', [
   ], :string
 
-  class Anon_Type_531 < FFI::Union
+  class Anon_Type_514 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_logs', [
@@ -3305,7 +2251,7 @@ module PactFfi
     :string,
   ], :string
 
-  class Anon_Type_533 < FFI::Union
+  class Anon_Type_516 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_output', [
@@ -3313,7 +2259,7 @@ module PactFfi
     :uchar,
   ], :string
 
-  class Anon_Type_535 < FFI::Union
+  class Anon_Type_518 < FFI::Union
   end
 
   attach_function 'pactffi_verifier_json', [
@@ -3337,7 +2283,7 @@ module PactFfi
     :string,
   ], :uint
 
-  class Anon_Type_537 < FFI::Union
+  class Anon_Type_520 < FFI::Union
   end
 
   attach_function 'pactffi_matches_string_value', [
@@ -3347,7 +2293,7 @@ module PactFfi
     :uint8_t,
   ], :string
 
-  class Anon_Type_539 < FFI::Union
+  class Anon_Type_522 < FFI::Union
   end
 
   attach_function 'pactffi_matches_u64_value', [
@@ -3357,7 +2303,7 @@ module PactFfi
     :uint8_t,
   ], :string
 
-  class Anon_Type_541 < FFI::Union
+  class Anon_Type_524 < FFI::Union
   end
 
   attach_function 'pactffi_matches_i64_value', [
@@ -3367,7 +2313,7 @@ module PactFfi
     :uint8_t,
   ], :string
 
-  class Anon_Type_543 < FFI::Union
+  class Anon_Type_526 < FFI::Union
   end
 
   attach_function 'pactffi_matches_f64_value', [
@@ -3377,7 +2323,7 @@ module PactFfi
     :uint8_t,
   ], :string
 
-  class Anon_Type_545 < FFI::Union
+  class Anon_Type_528 < FFI::Union
   end
 
   attach_function 'pactffi_matches_bool_value', [
@@ -3387,7 +2333,7 @@ module PactFfi
     :uint8_t,
   ], :string
 
-  class Anon_Type_547 < FFI::Union
+  class Anon_Type_530 < FFI::Union
   end
 
   attach_function 'pactffi_matches_binary_value', [
@@ -3399,7 +2345,7 @@ module PactFfi
     :uint8_t,
   ], :string
 
-  class Anon_Type_549 < FFI::Union
+  class Anon_Type_532 < FFI::Union
   end
 
   attach_function 'pactffi_matches_json_value', [
