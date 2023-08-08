@@ -176,3 +176,12 @@ Note that C2FFI::Parser doesn't actually parse JSON, but rather takes
 an array of hashes.  In theory, you could use this to produce output
 for any input format that is parsed in a similar manner.
 
+
+### Examples
+
+```
+bundle install
+bundle exec bin/c2ffi-ruby -M PactFfi -l libpact_ffi -o example/pact/pact.rb example/pact/pact.spec
+bundle exec bin/c2ffi-ruby -M Example -l ex1,ex2 -o example/simple/simple.rb example/simple/*.spec
+bundle exec bin/c2ffi-ruby -M MY_CAIRO -l cairo -o example/cairo/my_cairo.rb example/cairo/*.spec
+```

@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    c2ffi-ruby (0.1)
+
+GEM
+  specs:
+
+PLATFORMS
+  arm64-darwin-22
+
+DEPENDENCIES
+  c2ffi-ruby!
+
+BUNDLED WITH
+   2.4.18

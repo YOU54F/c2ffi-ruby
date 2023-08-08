@@ -15,12 +15,12 @@ module C2FFI
      private
 
     def add_struct(name)
-      if(name[0] == "_")
-        name = "C" + name
-      elsif(name == "")
+      if(name == "" or name.nil?)
         name = sprintf("Anon_Type_%d", @anon_counter)
         @anon_counter += 1
         return name
+      elsif(name[0] == "_")
+          name = "C" + name
       end
 
       name = name.capitalize.gsub!(/_([a-z])/) { |m| "_" + m[1].upcase } 
@@ -79,7 +79,11 @@ module C2FFI
         if(pointee == ":char" || pointee == ":uchar")
           return ":string"
         elsif(@struct_type[pointee])
-          return @struct_type[pointee] + ".ptr"
+          # puts "pointer to struct #{pointee}"
+          # puts "pointer to struct #{@struct_type[pointee]}"
+          puts "pointer to struct #{form[:type]}"
+          # puts "pointer to struct #{parse_type(form[:type])}"
+          return ":pointer" + ".ptr"
         else
           return ":pointer"
         end
