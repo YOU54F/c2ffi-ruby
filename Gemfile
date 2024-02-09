@@ -1,0 +1,1 @@
+gem 'c2ffi-ruby', path: './'
